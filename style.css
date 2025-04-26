@@ -1,0 +1,693 @@
+/* ===== ESTILOS GENERALES ===== */
+:root {
+  --primary-dark: #2C3E50;    /* Azul oscuro principal */
+  --primary: #3498DB;         /* Azul interactivo */
+  --primary-light: #E1F0FA;   /* Azul claro de fondo */
+  --accent: #2ECC71;          /* Verde para acciones positivas */
+  --danger: #E74C3C;          /* Rojo para alertas */
+  --text-dark: #2C3E50;       /* Texto principal */
+  --text-medium: #7F8C8D;     /* Texto secundario */
+  --text-light: #ECF0F1;      /* Texto claro sobre fondos oscuros */
+  --bg-light: #F8F9FA;        /* Fondo general */
+  --white: #FFFFFF;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 42px;
+  filter: brightness(0) invert(1); /* Convierte logo a blanco */
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--white), var(--primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: var(--white);
+  border-bottom: 2px solid var(--primary);
+}
+
+.btn-login {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background: #2980B9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(41, 128, 185, 0.3);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/medical-pattern.png') center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.btn-demo {
+  display: inline-block;
+  background: var(--white);
+  color: var(--primary);
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+
+.btn-demo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--white);
+}
+
+.features h3 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--primary-dark);
+  position: relative;
+  display: inline-block;
+}
+
+.features h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card span {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  color: var(--primary);
+}
+
+.feature-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.feature-card p {
+  color: var(--text-medium);
+}
+
+/* ===== LOGIN PAGE ===== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../img/login-bg.jpg') center/cover;
+  position: relative;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.9);
+}
+
+.login-box {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-logo {
+  height: 70px;
+  margin-bottom: 1.5rem;
+}
+
+.login-box h2 {
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.btn-login-submit {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-login-submit:hover {
+  background: #2980B9;
+  transform: translateY(-2px);
+}
+
+.login-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+.login-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  padding: 2rem 1rem;
+}
+
+.main-content {
+  padding: 2rem;
+  background: var(--bg-light);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  border-top: 4px solid var(--primary);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none; /* Menú hamburguesa en mobile */
+  }
+}
+
+/* Animaciones adicionales */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== ESTILOS COMUNES PARA TODAS LAS PÁGINAS ===== */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #2C3E50;
+  color: white;
+  padding: 1.5rem;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo img {
+  height: 40px;
+}
+
+.sidebar-logo h2 {
+  font-size: 1.3rem;
+  background: linear-gradient(to right, white, #E1F0FA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem;
+  background: #F8F9FA;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  color: #2C3E50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA CITAS ===== */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 500;
+}
+
+.filter-group input, .filter-group select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.appointments-table th, .appointments-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.appointments-table th {
+  background: #E1F0FA;
+  color: #2C3E50;
+  font-weight: 600;
+}
+
+.appointments-table tr:last-child td {
+  border-bottom: none;
+}
+
+.appointments-table tr:hover {
+  background: #f5f5f5;
+}
+
+.badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.badge.confirmed {
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ECC71;
+}
+
+.badge.pending {
+  background: rgba(241, 196, 15, 0.1);
+  color: #F1C40F;
+}
+
+.badge.cancelled {
+  background: rgba(231, 76, 60, 0.1);
+  color: #E74C3C;
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA PACIENTES ===== */
+.patient-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 300px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.patient-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA REPORTES ===== */
+.chart-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  height: 300px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: #3498DB;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== ESTILOS RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dashboard-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+      padding: 1rem;
+  }
+  
+  .content-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+  
+  .search-box {
+      width: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HealthTrack Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="DevHealth Logo">
+            <h1>HealthTrack Pro</h1>
+        </div>
+        <nav>
+            <a href="#pacientes"button onclick="pacientes()">Pacientes</a>
+            <a href="#citas"button onclick="citas()">Citas</a>
+            <a href="#reportes"button onclick="reportes()">Reportes</a>
+            <a href="#" class="btn-logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <h2>Bienvenido, Dr. Pérez</h2>
+        <div class="stats">
+            <div class="stat-card">
+                <h3>15</h3>
+                <p>Citas Hoy</p>
+            </div>
+            <div class="stat-card">
+                <h3>42</h3>
+                <p>Pacientes Activos</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

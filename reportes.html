@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - HealthTrack Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar (igual que en citas.html) -->
+        <aside class="sidebar">
+            <!-- Mismo sidebar que en citas.html -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1><i class="fas fa-chart-bar"></i> Reportes y Estadísticas</h1>
+                <div class="header-actions">
+                    <button class="btn-secondary"><i class="fas fa-download"></i> Exportar</button>
+                    <select id="reportRange">
+                        <option value="7">Últimos 7 días</option>
+                        <option value="30" selected>Últimos 30 días</option>
+                        <option value="90">Últimos 3 meses</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Gráficos -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Citas por Estado</h3>
+                    <canvas id="citasChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Pacientes Nuevos</h3>
+                    <canvas id="pacientesChart"></canvas>
+                </div>
+                <div class="chart-card full-width">
+                    <h3>Ingresos Mensuales</h3>
+                    <canvas id="ingresosChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tabla de Datos -->
+            <div class="table-container">
+                <h3>Resumen de Actividad</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>Este Mes</th>
+                            <th>Mes Anterior</th>
+                            <th>Variación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Citas Programadas</td>
+                            <td>156</td>
+                            <td>142</td>
+                            <td><span class="text-success">+9.8% <i class="fas fa-arrow-up"></i></span></td>
+                        </tr>
+                        <!-- Más filas... -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
